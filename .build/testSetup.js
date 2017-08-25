@@ -8,5 +8,15 @@ require.extensions['.png'] = function () {return null;};
 require.extensions['.jpg'] = function () {return null;};
 require.extensions['.html'] = function () {return null;};
 
+const chai = require('chai');
+
+// To ba able test promices
+const chaiAsPrimised = require('chai-as-promised');
+chai.use(chaiAsPrimised);
+
 // Use chai BDD assertion style
-global.expect = require('chai').expect;
+global.expect = chai.expect;
+global.should = chai.should();
+
+// Mocking with sinon
+global.sinon = require('sinon');
